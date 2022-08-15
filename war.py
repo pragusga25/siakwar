@@ -4,6 +4,7 @@ import re
 from urllib3 import poolmanager
 import sys
 from termcolor import colored, cprint
+from time import sleep
 
 class TLSAdapter(requests.adapters.HTTPAdapter):
 
@@ -99,5 +100,7 @@ while True:
         print(colored('[!] Siak War has not started yet', 'red'))
     except:
         print(colored('[!] Something went wrong', 'red'))
+    finally:
+        sleep(0.5)
 
 print(colored('[-] Program has ended', 'blue'))
